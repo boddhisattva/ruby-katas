@@ -1,13 +1,13 @@
 require './journey.rb'
 
-location1 = Location.new(1,2,'N')
-location2 = Location.new(3,3,'E')
+traveller1_current_location = Location.new(1,2,'N')
+traveller2_current_location = Location.new(3,3,'E')
 
 direction2 = Direction.new("MMRMMRMRRM")
 direction1 = Direction.new("LMLMLMLMM")
 
-traveller1 = Traveller.new(location1 , direction1)
-traveller2 = Traveller.new(location2 , direction2)
+traveller1 = Traveller.new(traveller1_current_location , direction1)
+traveller2 = Traveller.new(traveller2_current_location , direction2)
 
 height = 5
 width = 5
