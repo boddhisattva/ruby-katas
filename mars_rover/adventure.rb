@@ -1,8 +1,5 @@
 require './journey.rb'
 
-class Adventure
-end
-
 location1 = Location.new(1,2,'N')
 location2 = Location.new(3,3,'E')
 
