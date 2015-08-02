@@ -17,7 +17,7 @@ class Traveller
   def traverse(area)
     path_moves.each_with_index do | move, index |
       if current_move_is_to_go_forward?(move)
-        move_forward_in_your_current_facing_direction(area)
+        move_forward_based_on_travelers_current_facing_direction(area)
       else
         change_direction_by_right_angles_if_current_move_is_left_or_right(move)
       end
@@ -34,7 +34,7 @@ class Traveller
     move == 'M'
   end
 
-  def move_forward_in_your_current_facing_direction(area)
+  def move_forward_based_on_travelers_current_facing_direction(area)
     if currently_facing_south?
       move_downwards_along_the_y_axis(area)
     elsif currently_facing_north?
