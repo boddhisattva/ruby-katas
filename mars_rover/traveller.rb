@@ -12,7 +12,7 @@ class Traveller
   end
 
   def traverse(area)
-    path.moves.each_with_index do | move, index |
+    path_moves.each_with_index do | move, index |
       if current_move_is_to_go_forward?(move)
         move_forward_in_your_current_facing_direction_by_a_unit(area)
       else
@@ -22,6 +22,10 @@ class Traveller
   end
 
   private
+
+  def path_moves
+    path.moves
+  end
 
   def current_move_is_to_go_forward?(move)
     move == 'M'
