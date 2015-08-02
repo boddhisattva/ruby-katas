@@ -1,8 +1,6 @@
 class Traveller
 
-  MOVES = {"L" => "Left", "R" => "Right", "M" => "Forward"}
-
-  CARDINAL_DIRECTIONS = {"N" => {"L" => 'W', "R" => 'E'}, "E" => {"L" => 'N', "R" => 'S'}, 
+  CARDINAL_DIRECTIONS = {"N" => {"L" => 'W', "R" => 'E'}, "E" => {"L" => 'N', "R" => 'S'},
   "W" => {"L" => 'S', "R" => 'N'}, "S" => {"L" => 'E', "R" => 'W'} }
 
   attr_reader :path
@@ -10,11 +8,11 @@ class Traveller
 
   def initialize(location, path)
     @location = location
-    @path = validate_and_split_path(path)
+    @path = path
   end
 
   def traverse(area)
-    path.each_with_index do | move, index |
+    path.moves.each_with_index do | move, index |
       if current_move_is_to_go_forward?(move)
         move_forward_in_your_current_facing_direction_by_a_unit(area)
       else
@@ -24,20 +22,6 @@ class Traveller
   end
 
   private
-
-  def validate_and_split_path(path)
-    path = split_path_into_individual_moves(path)
-    raise "Improper movement path provided to the traveller" unless movement_path_valid?(path)
-    path
-  end
-
-  def split_path_into_individual_moves(path)
-    path.split(//)
-  end
-
-  def movement_path_valid?(path)
-    path.all?{|each_move| MOVES.keys.include?(each_move)}
-  end
 
   def current_move_is_to_go_forward?(move)
     move == 'M'
@@ -73,14 +57,14 @@ class Traveller
 
   def move_downwards_along_the_y_axis(area)
     if location.y <= area.coordinates[:lower_left].y
-      raise "Movement is going out of specified area limits along -Y axis" 
+      raise "Movement is going out of specified area limits along -Y axis"
     end
     location.y = location.y - 1
   end
 
   def move_upwards_along_the_y_axis(area)
     if location.y >= area.coordinates[:upper_right].y
-      raise "Movement is going out of specified area limits along Y axis" 
+      raise "Movement is going out of specified area limits along Y axis"
     end
     location.y = location.y + 1
   end

@@ -4,23 +4,20 @@ describe Traveller do
     context "Given a traveller instance" do
       it "should set their location and path" do
         location = Location.new(1,2,'N')
-        traveller = Traveller.new(location, "LMLMM")
+        direction = Direction.new("LMLMM")
+        traveller = Traveller.new(location, direction)
         expect(location.x).to eq (1)
         expect(location.y).to eq (2)
         expect(location.compass_point).to eq ('N')
-        expect(traveller.path).to eq (["L","M","L","M","M"])
+        expect(direction.moves).to eq (["L","M","L","M","M"])
       end
 
-      it "should raise an error for improper path provided" do
-        location = Location.new(1,2,'N')
-        expect(lambda {Traveller.new(location, "LMLMMQ")}).to raise_error("Improper movement path provided to the traveller")
-      end
     end
   end
 
   describe "#traverse" do
     before :each do
-      
+
       height = 5
       width = 5
 
@@ -40,8 +37,8 @@ describe Traveller do
       it "should get the final position wrt after the entire traversal" do
 
         loc2 = Location.new(3,3,"E")
-        path2 = 'MMRMMRMRRM'
-        traveller2 = Traveller.new(loc2, path2)
+        direction2 = Direction.new('MMRMMRMRRM')
+        traveller2 = Traveller.new(loc2, direction2)
 
         traveller2.traverse(@area)
 
@@ -57,8 +54,8 @@ describe Traveller do
           it "should raise an error with an appropriate error message" do
 
               loc2 = Location.new(3,3,"E")
-              path2 = 'MMMRMMRMRRM'
-              traveller2 = Traveller.new(loc2, path2)
+              direction2 = Direction.new('MMMRMMRMRRM')
+              traveller2 = Traveller.new(loc2, direction2)
 
               expect(lambda {traveller2.traverse(@area)}).to raise_error("Movement is going out of specified area limits along X axis")
 
@@ -69,8 +66,8 @@ describe Traveller do
           it "should raise an error with an appropriate error message" do
 
               loc2 = Location.new(3,3,"E")
-              path2 = 'MMRRRMMMRMRRM'
-              traveller2 = Traveller.new(loc2, path2)
+              direction2 = Direction.new('MMRRRMMMRMRRM')
+              traveller2 = Traveller.new(loc2, direction2)
 
               expect(lambda {traveller2.traverse(@area)}).to raise_error("Movement is going out of specified area limits along Y axis")
 
@@ -81,8 +78,8 @@ describe Traveller do
           it "should raise an error with an appropriate error message" do
 
               loc2 = Location.new(3,3,"W")
-              path2 = 'MMMMRMMRMRRM'
-              traveller2 = Traveller.new(loc2, path2)
+              direction2 = Direction.new('MMMMRMMRMRRM')
+              traveller2 = Traveller.new(loc2, direction2)
 
               expect(lambda {traveller2.traverse(@area)}).to raise_error("Movement is going out of specified area limits along -X axis")
 
@@ -93,8 +90,8 @@ describe Traveller do
           it "should raise an error with an appropriate error message" do
 
               loc2 = Location.new(3,3,"E")
-              path2 = 'MMRMMMMRMRRM'
-              traveller2 = Traveller.new(loc2, path2)
+              direction2 = Direction.new('MMRMMMMRMRRM')
+              traveller2 = Traveller.new(loc2, direction2)
 
               expect(lambda {traveller2.traverse(@area)}).to raise_error("Movement is going out of specified area limits along -Y axis")
 

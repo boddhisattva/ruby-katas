@@ -4,12 +4,10 @@ describe Journey do
     location1 = Location.new(1,2,'N')
     location2 = Location.new(3,3,'E')
 
-    path1 = "LMLMLMLMM"
-
-    path2 = "MMRMMRMRRM"
+    path1 = Direction.new("LMLMLMLMM")
+    path2 = Direction.new("MMRMMRMRRM")
 
     traveller1 = Traveller.new(location1 , path1)
-
     traveller2 = Traveller.new(location2 , path2)
 
     height = 5
@@ -60,7 +58,7 @@ describe Journey do
         it "should display the final destination position for each of these travellers" do
           @journey.travel
           journey_output = "1 3 N\n5 1 E\n"
-          expect {@journey.get_destination_position}.to output(journey_output).to_stdout    
+          expect {@journey.get_destination_position}.to output(journey_output).to_stdout
         end
       end
     end

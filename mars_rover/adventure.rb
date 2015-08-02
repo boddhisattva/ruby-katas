@@ -1,17 +1,16 @@
 require './journey.rb'
+
 class Adventure
 end
 
 location1 = Location.new(1,2,'N')
 location2 = Location.new(3,3,'E')
 
-path1 = "LMLMLMLMM"
+direction2 = Direction.new("MMRMMRMRRM")
+direction1 = Direction.new("LMLMLMLMM")
 
-path2 = "MMRMMRMRRM"
-
-traveller1 = Traveller.new(location1 , path1)
-
-traveller2 = Traveller.new(location2 , path2)
+traveller1 = Traveller.new(location1 , direction1)
+traveller2 = Traveller.new(location2 , direction2)
 
 height = 5
 width = 5

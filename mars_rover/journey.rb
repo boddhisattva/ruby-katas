@@ -2,11 +2,12 @@ require './location.rb'
 require './traveller.rb'
 require './travellers.rb'
 require './rectangular_plateau.rb'
+require './direction.rb'
 
 class Journey
-  
+
   attr_accessor :travellers, :area
-  
+
   def initialize(area, travellers)
     @area = area
     @travellers = travellers
