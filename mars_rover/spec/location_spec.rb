@@ -10,7 +10,7 @@ describe Location do
 
       context "the location instance has an incorrect cardinal point" do
         it "should raise an error with an appropriate error message" do
-          expect(lambda {Location.new(1,2,'U')}).to raise_error("Specified cardinal compass point is invalid")
+          expect {Location.new(1,2,'U')}.to raise_error("Specified cardinal compass point is invalid")
         end
       end
 
