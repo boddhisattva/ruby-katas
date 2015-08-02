@@ -36,9 +36,9 @@ class Traveller
 
   def move_forward_based_on_travelers_current_facing_direction(area)
     if currently_facing_south?
-      move_downwards_along_the_y_axis(area)
+      move_downward_along_the_y_axis(area)
     elsif currently_facing_north?
-      move_upwards_along_the_y_axis(area)
+      move_upward_along_the_y_axis(area)
     elsif currently_facing_east?
       move_rightward_along_the_x_axis(area)
     elsif currently_facing_west?
@@ -62,14 +62,14 @@ class Traveller
     location.compass_point == 'W'
   end
 
-  def move_downwards_along_the_y_axis(area)
+  def move_downward_along_the_y_axis(area)
     if location.y <= area.coordinates[:lower_left].y
       raise "Movement is going out of specified area limits along -Y axis"
     end
     location.y = location.y - Y_AXIS_UNIT
   end
 
-  def move_upwards_along_the_y_axis(area)
+  def move_upward_along_the_y_axis(area)
     if location.y >= area.coordinates[:upper_right].y
       raise "Movement is going out of specified area limits along Y axis"
     end
