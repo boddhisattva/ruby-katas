@@ -19,7 +19,7 @@ class Traveller
       if current_move_is_to_go_forward?(move)
         move_forward_based_on_travelers_current_facing_direction(area)
       else
-        change_direction_by_right_angles_if_current_move_is_left_or_right(move)
+        change_direction_by_right_angles(move)
       end
     end
   end
@@ -90,7 +90,7 @@ class Traveller
     location.x = location.x - X_AXIS_UNIT
   end
 
-  def change_direction_by_right_angles_if_current_move_is_left_or_right(move)
+  def change_direction_by_right_angles(move)
     location.compass_point = CARDINAL_DIRECTIONS[location.compass_point][move]
   end
 
