@@ -35,31 +35,19 @@ class Traveller
   end
 
   def move_forward_based_on_travelers_current_facing_direction(area)
-    if currently_facing_south?
+    if currently_facing_direction_is?('S')
       move_downward_along_the_y_axis(area)
-    elsif currently_facing_north?
+    elsif currently_facing_direction_is?('N')
       move_upward_along_the_y_axis(area)
-    elsif currently_facing_east?
+    elsif currently_facing_direction_is?('E')
       move_rightward_along_the_x_axis(area)
-    elsif currently_facing_west?
+    elsif currently_facing_direction_is?('W')
       move_leftward_along_the_x_axis(area)
     end
   end
 
-  def currently_facing_south?
-    location.compass_point == 'S'
-  end
-
-  def currently_facing_north?
-    location.compass_point == 'N'
-  end
-
-  def currently_facing_east?
-    location.compass_point == 'E'
-  end
-
-  def currently_facing_west?
-    location.compass_point == 'W'
+  def currently_facing_direction_is?(direction)
+    location.compass_point == direction
   end
 
   def move_downward_along_the_y_axis(area)
