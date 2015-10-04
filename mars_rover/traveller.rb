@@ -4,6 +4,9 @@ require './east.rb'
 require './west.rb'
 class Traveller
 
+  LEFT = 'L'
+  RIGHT = 'R'
+
   X_AXIS_UNIT = 1
   Y_AXIS_UNIT = 1
 
@@ -81,9 +84,9 @@ class Traveller
 
   def change_direction_by_right_angles(move)
     cardinal_direction = get_cardinal_direction
-    location.compass_point = if move == 'L'
+    location.compass_point = if move == LEFT
                                cardinal_direction.left
-                             else
+                             elsif move == RIGHT
                                cardinal_direction.right
                              end
   end
