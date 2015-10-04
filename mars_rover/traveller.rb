@@ -1,7 +1,8 @@
+require './north.rb'
+require './south.rb'
+require './east.rb'
+require './west.rb'
 class Traveller
-
-  CARDINAL_DIRECTIONS = {"N" => {"L" => 'W', "R" => 'E'}, "E" => {"L" => 'N', "R" => 'S'},
-  "W" => {"L" => 'S', "R" => 'N'}, "S" => {"L" => 'E', "R" => 'W'} }
 
   X_AXIS_UNIT = 1
   Y_AXIS_UNIT = 1
@@ -79,7 +80,21 @@ class Traveller
   end
 
   def change_direction_by_right_angles(move)
-    location.compass_point = CARDINAL_DIRECTIONS[location.compass_point][move]
+    cardinal_direction = get_cardinal_direction
+    location.compass_point = if move == 'L'
+                               cardinal_direction.left
+                             else
+                               cardinal_direction.right
+                             end
+  end
+
+  def get_cardinal_direction
+    direction = case location.compass_point
+      when 'N' ; North.new;
+      when 'S' ; South.new;
+      when 'E' ; East.new;
+      when 'W' ; West.new;
+    end
   end
 
 end
