@@ -34,18 +34,20 @@ describe Traveller do
     end
 
     context "given a set of coordinates and a traversal path" do
-      it "should get the final position wrt after the entire traversal" do
+      context "traveller travels within area of travel"  do
+        it "should get the final position wrt after the entire traversal" do
 
-        loc2 = Location.new(3,3,"E")
-        direction2 = Direction.new('MMRMMRMRRM')
-        traveller2 = Traveller.new(loc2, direction2)
+          loc2 = Location.new(3,3,"E")
+          direction2 = Direction.new('MMRMMRMRRM')
+          traveller2 = Traveller.new(loc2, direction2)
 
-        traveller2.traverse(@area)
+          traveller2.traverse(@area)
 
-        expect(traveller2.location.x).to eq(5)
-        expect(traveller2.location.y).to eq(1)
-        expect(traveller2.location.compass_point).to eq("E")
+          expect(traveller2.location.x).to eq(5)
+          expect(traveller2.location.y).to eq(1)
+          expect(traveller2.location.compass_point).to eq("E")
 
+        end
       end
 
       context "traveller goes outside area of travel"  do
