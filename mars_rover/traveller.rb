@@ -55,31 +55,35 @@ class Traveller
   end
 
   def move_downward_along_the_y_axis(area)
-    if location.y <= area.coordinates[:lower_left].y
+    if area.movement_within_south_limit?(location.y)
+      location.y = location.y - Y_AXIS_UNIT
+    else
       raise "Movement is going out of specified area limits along -Y axis"
     end
-    location.y = location.y - Y_AXIS_UNIT
   end
 
   def move_upward_along_the_y_axis(area)
-    if location.y >= area.coordinates[:upper_right].y
+    if area.movement_within_north_limit?(location.y)
+      location.y = location.y + Y_AXIS_UNIT
+    else
       raise "Movement is going out of specified area limits along Y axis"
     end
-    location.y = location.y + Y_AXIS_UNIT
   end
 
   def move_rightward_along_the_x_axis(area)
-    if location.x >= area.coordinates[:upper_right].x
+    if area.movement_within_east_limit?(location.x)
+      location.x = location.x + X_AXIS_UNIT
+    else
       raise "Movement is going out of specified area limits along X axis"
     end
-    location.x = location.x + X_AXIS_UNIT
   end
 
   def move_leftward_along_the_x_axis(area)
-    if location.x <= area.coordinates[:lower_left].x
+    if area.movement_within_west_limit?(location.x)
+      location.x = location.x - X_AXIS_UNIT
+    else
       raise "Movement is going out of specified area limits along -X axis"
     end
-    location.x = location.x - X_AXIS_UNIT
   end
 
   def change_direction_by_right_angles(move)
