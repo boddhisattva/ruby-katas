@@ -16,8 +16,14 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require './journey.rb'
+
 require 'pry'
+
+PROJECT_ROOT = File.expand_path("../../", __FILE__)
+
+Dir.glob(File.join(PROJECT_ROOT, "*.rb")).each do |file|
+  require file
+end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
