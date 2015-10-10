@@ -1,13 +1,7 @@
-require_relative './lib/location.rb'
-require_relative './lib/traveller.rb'
-require_relative './lib/rectangular_plateau.rb'
-require_relative './lib/direction.rb'
-
-# PROJECT_ROOT = File.expand_path("../../", __FILE__)
-
-# Dir.glob(File.join(PROJECT_ROOT, "lib", "*.rb")).each do |file|
-#   require file
-# end
+require_relative '../lib/location.rb'
+require_relative '../lib/traveller.rb'
+require_relative '../lib/rectangular_plateau.rb'
+require_relative '../lib/direction.rb'
 
 traveller1_current_location = Location.new(1, 2, 'N')
 traveller2_current_location = Location.new(3, 3, 'E')
