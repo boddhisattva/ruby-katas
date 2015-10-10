@@ -1,7 +1,7 @@
-require './north.rb'
-require './south.rb'
-require './east.rb'
-require './west.rb'
+require_relative 'north.rb'
+require_relative 'south.rb'
+require_relative 'east.rb'
+require_relative 'west.rb'
 class Traveller
 
   LEFT = 'L'
