@@ -1,4 +1,7 @@
-require './journey.rb'
+require './location.rb'
+require './traveller.rb'
+require './rectangular_plateau.rb'
+require './direction.rb'
 
 traveller1_current_location = Location.new(1, 2, 'N')
 traveller2_current_location = Location.new(3, 3, 'E')
@@ -20,9 +23,8 @@ coordinates = { :lower_left => Location.new(default_x_coordinate, default_y_coor
                 :upper_left => Location.new(default_x_coordinate, height),
                 :upper_right => Location.new(width, height) }
 
-journey = Journey.new(
-  RectangularPlateau.new(width, height, coordinates),
-  Travellers.new([traveller1, traveller2]) )
+traveller1.traverse(RectangularPlateau.new(width, height, coordinates))
+puts traveller1.location.x.to_s + " " + traveller1.location.y.to_s + " " + traveller1.location.compass_point
 
-journey.travel
-journey.get_destination_position
+traveller2.traverse(RectangularPlateau.new(width, height, coordinates))
+puts traveller2.location.x.to_s + " " + traveller2.location.y.to_s + " " + traveller2.location.compass_point
