@@ -5,7 +5,7 @@ class RectangularPlateau
 
   attr_reader :width, :height, :coordinates
 
-  def initialize(width,height,coordinates)
+  def initialize(width, height, coordinates)
     @width = width
     @height = height
     @coordinates = coordinates
