@@ -6,6 +6,7 @@ describe Traveller do
         location = Location.new(1,2,'N')
         direction = Direction.new("LMLMM")
         traveller = Traveller.new(location, direction)
+
         expect(location.x).to eq (1)
         expect(location.y).to eq (2)
         expect(location.compass_point).to eq ('N')

@@ -3,6 +3,7 @@ describe Location do
     context "Given a location instance" do
       it "should set the default location coordinates and compass_point" do
         location = Location.new(1,2,'N')
+
         expect(location.x).to eq (1)
         expect(location.y).to eq (2)
         expect(location.compass_point).to eq ('N')
