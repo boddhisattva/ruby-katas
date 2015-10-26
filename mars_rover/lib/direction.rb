@@ -1,6 +1,5 @@
 class Direction
-
-  MOVES = {"L" => "Left", "R" => "Right", "M" => "Forward"}
+  MOVES = { "L" => "Left", "R" => "Right", "M" => "Forward" }
 
   attr_accessor :moves
 
@@ -12,7 +11,7 @@ class Direction
   private
 
   def movement_path_valid?(path)
-    if path.all?{|each_move| MOVES.keys.include?(each_move)}
+    if path.all? { |each_move| MOVES.keys.include?(each_move) }
       return true
     else
       raise "Move specified as part of the path is an invalid one"
@@ -22,5 +21,4 @@ class Direction
   def split_path_into_individual_moves(path)
     path.split(//)
   end
-
 end

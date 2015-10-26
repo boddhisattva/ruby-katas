@@ -1,11 +1,10 @@
-require_relative 'north.rb'
-require_relative 'south.rb'
-require_relative 'east.rb'
-require_relative 'west.rb'
+require_relative "north.rb"
+require_relative "south.rb"
+require_relative "east.rb"
+require_relative "west.rb"
 class Traveller
-
-  LEFT = 'L'
-  RIGHT = 'R'
+  LEFT = "L"
+  RIGHT = "R"
 
   X_AXIS_UNIT = 1
   Y_AXIS_UNIT = 1
@@ -19,7 +18,7 @@ class Traveller
   end
 
   def traverse(area)
-    path_moves.each_with_index do |move, index|
+    path_moves.each_with_index do |move, _index|
       if current_move_is_to_go_forward?(move)
         move_forward_based_on_travelers_current_facing_direction(area)
       else
@@ -35,15 +34,15 @@ class Traveller
   end
 
   def current_move_is_to_go_forward?(move)
-    move == 'M'
+    move == "M"
   end
 
   def move_forward_based_on_travelers_current_facing_direction(area)
     case location.compass_point
-      when 'N' ; move_upward_along_the_y_axis(area);
-      when 'S' ; move_downward_along_the_y_axis(area);
-      when 'E' ; move_rightward_along_the_x_axis(area);
-      when 'W' ; move_leftward_along_the_x_axis(area);
+    when "N" then move_upward_along_the_y_axis(area)
+    when "S" then move_downward_along_the_y_axis(area)
+    when "E" then move_rightward_along_the_x_axis(area)
+    when "W" then move_leftward_along_the_x_axis(area)
     end
   end
 
@@ -90,11 +89,10 @@ class Traveller
 
   def get_cardinal_direction
     direction = case location.compass_point
-      when 'N' ; North.new;
-      when 'S' ; South.new;
-      when 'E' ; East.new;
-      when 'W' ; West.new;
+                when "N" then North.new
+                when "S" then South.new
+                when "E" then East.new
+                when "W" then West.new
     end
   end
-
 end

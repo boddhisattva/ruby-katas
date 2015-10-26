@@ -4,10 +4,10 @@ describe RectangularPlateau do
     @height = 5
     default_x_coordinate = RectangularPlateau::DEFAULT_X_COORDINATE
     default_y_coordinate = RectangularPlateau::DEFAULT_Y_COORDINATE
-    coordinates = { :lower_left => Location.new(default_x_coordinate, default_y_coordinate),
-                    :lower_right => Location.new(@width, default_y_coordinate),
-                    :upper_left => Location.new(default_x_coordinate, @height),
-                    :upper_right => Location.new(@width, @height)}
+    coordinates = { lower_left: Location.new(default_x_coordinate, default_y_coordinate),
+                    lower_right: Location.new(@width, default_y_coordinate),
+                    upper_left: Location.new(default_x_coordinate, @height),
+                    upper_right: Location.new(@width, @height) }
     @rectangular_plateau = RectangularPlateau.new(@width, @height, coordinates)
   end
 

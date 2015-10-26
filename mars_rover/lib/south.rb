@@ -1,9 +1,9 @@
 class South
   def left
-    'E'
+    "E"
   end
 
   def right
-    'W'
+    "W"
   end
 end

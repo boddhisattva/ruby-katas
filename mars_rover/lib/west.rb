@@ -1,9 +1,9 @@
 class West
   def left
-    'S'
+    "S"
   end
 
   def right
-    'N'
+    "N"
   end
 end

@@ -1,9 +1,9 @@
 class North
   def left
-    'W'
+    "W"
   end
 
   def right
-    'E'
+    "E"
   end
 end

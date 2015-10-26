@@ -1,5 +1,4 @@
 class RectangularPlateau
-
   DEFAULT_Y_COORDINATE = 0
   DEFAULT_X_COORDINATE = 0
 
@@ -26,5 +25,4 @@ class RectangularPlateau
   def movement_within_west_limit?(x_coordinate_location)
     x_coordinate_location > coordinates[:lower_left].x
   end
-
 end
