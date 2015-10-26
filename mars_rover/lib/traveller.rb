@@ -88,11 +88,11 @@ class Traveller
   end
 
   def get_cardinal_direction
-    direction = case location.compass_point
-                when "N" then North.new
-                when "S" then South.new
-                when "E" then East.new
-                when "W" then West.new
-                end
+    case location.compass_point
+    when "N" then North.new
+    when "S" then South.new
+    when "E" then East.new
+    when "W" then West.new
+    end
   end
 end
