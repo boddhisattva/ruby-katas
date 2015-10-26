@@ -93,6 +93,6 @@ class Traveller
                 when "S" then South.new
                 when "E" then East.new
                 when "W" then West.new
-    end
+                end
   end
 end
