@@ -7,10 +7,10 @@ describe Traveller do
         direction = Direction.new("LMLMM")
         traveller = Traveller.new(location, direction)
 
-        expect(location.x).to eq (1)
-        expect(location.y).to eq (2)
-        expect(location.compass_point).to eq ("N")
-        expect(direction.moves).to eq (%w(L M L M M))
+        expect(traveller.location.x).to eq (1)
+        expect(traveller.location.y).to eq (2)
+        expect(traveller.location.compass_point).to eq ("N")
+        expect(traveller.path.moves).to eq (%w(L M L M M))
       end
 
     end
