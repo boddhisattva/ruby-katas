@@ -17,6 +17,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 PROJECT_ROOT = File.expand_path("../../", __FILE__)
 
 Dir.glob(File.join(PROJECT_ROOT, "lib", "*.rb")).each do |file|

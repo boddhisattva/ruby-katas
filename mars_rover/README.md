@@ -1,5 +1,9 @@
 # Mars Rover Problem
 
+[![Code Climate](https://codeclimate.com/github/boddhisattva/ruby-katas/badges/gpa.svg)](https://codeclimate.com/github/boddhisattva/ruby-katas) [![Circle CI](https://circleci.com/gh/boddhisattva/ruby-katas.svg?style=svg)](https://circleci.com/gh/boddhisattva/ruby-katas)
+
+<hr />
+
 ### About
 
 * This is a program to solve the Mars Rover Problem.
@@ -55,7 +59,9 @@ won't start to move until the first one has finished moving.
 
 The output for each rover should be its final co-ordinates and heading.
 
-## Input and output
+<hr />
+
+## Program input and expected output
 
 Test Input:
 
