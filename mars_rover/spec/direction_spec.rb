@@ -1,7 +1,7 @@
 describe Direction do
   describe "#initialize" do
     context "Given a direction instance initialized with valid moves" do
-      it "should set the moves along which one is supposed to travel" do
+      it "should set the moves along which direction it is supposed to travel" do
         direction = Direction.new("LMLMMM")
 
         expect(direction.moves).to eq (%w(L M L M M M))
