@@ -36,7 +36,7 @@ describe Traveller do
 
     context "given a set of coordinates and a traversal path" do
       context "traveller travels within area of travel" do
-        it "should get the final position wrt after the entire traversal" do
+        it "should get the final position after the entire traversal" do
 
           loc2 = Location.new(3, 3, "E")
           direction2 = Direction.new("MMRMMRMRRM")
