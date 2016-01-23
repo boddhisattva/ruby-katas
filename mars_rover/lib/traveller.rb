@@ -3,13 +3,13 @@ require_relative "south.rb"
 require_relative "east.rb"
 require_relative "west.rb"
 class Traveller
-  LEFT = "L"
-  RIGHT = "R"
-  FORWARD = "M"
-  NORTH = "N"
-  SOUTH = "S"
-  EAST = "E"
-  WEST = "W"
+  LEFT = "L".freeze
+  RIGHT = "R".freeze
+  FORWARD = "M".freeze
+  NORTH = "N".freeze
+  SOUTH = "S".freeze
+  EAST = "E".freeze
+  WEST = "W".freeze
 
   X_AXIS_UNIT = 1
   Y_AXIS_UNIT = 1
