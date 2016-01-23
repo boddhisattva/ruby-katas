@@ -3,8 +3,13 @@ require_relative "south.rb"
 require_relative "east.rb"
 require_relative "west.rb"
 class Traveller
-  LEFT = "L"
-  RIGHT = "R"
+  LEFT = "L".freeze
+  RIGHT = "R".freeze
+  FORWARD = "M".freeze
+  NORTH = "N".freeze
+  SOUTH = "S".freeze
+  EAST = "E".freeze
+  WEST = "W".freeze
 
   X_AXIS_UNIT = 1
   Y_AXIS_UNIT = 1
@@ -34,15 +39,15 @@ class Traveller
   end
 
   def current_move_is_to_go_forward?(move)
-    move == "M"
+    move == FORWARD
   end
 
   def move_forward_based_on_travelers_current_facing_direction(area)
     case location.compass_point
-    when "N" then move_upward_along_the_y_axis(area)
-    when "S" then move_downward_along_the_y_axis(area)
-    when "E" then move_rightward_along_the_x_axis(area)
-    when "W" then move_leftward_along_the_x_axis(area)
+    when NORTH then move_upward_along_the_y_axis(area)
+    when SOUTH then move_downward_along_the_y_axis(area)
+    when EAST then move_rightward_along_the_x_axis(area)
+    when WEST then move_leftward_along_the_x_axis(area)
     end
   end
 
@@ -89,10 +94,10 @@ class Traveller
 
   def get_cardinal_direction
     case location.compass_point
-    when "N" then North.new
-    when "S" then South.new
-    when "E" then East.new
-    when "W" then West.new
+    when NORTH then North.new
+    when SOUTH then South.new
+    when EAST then East.new
+    when WEST then West.new
     end
   end
 end

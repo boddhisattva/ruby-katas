@@ -1,5 +1,5 @@
 class Direction
-  MOVES = { "L" => "Left", "R" => "Right", "M" => "Forward" }
+  MOVES = { "L" => "Left", "R" => "Right", "M" => "Forward" }.freeze
 
   attr_accessor :moves
 
